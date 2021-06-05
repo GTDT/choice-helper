@@ -1,18 +1,57 @@
-import random
-import time
+import time, random
 #made by JaCrispy4939
-#feel free to make edits but dont steal the code and name it yours
-while True:
-    choice1 = input("choice 1: ")
-    if choice1 == "exit":
-        print("\ngoodbye")
-        time.sleep(1.5)
-        quit()
-    choice2 = input("Choice 2: ")
-    if choice2 == "exit":
-        print("\ngoodbye")
-        time.sleep(1.5)
-        quit()
-    vars = [choice1,choice2]
+#feel free to make edits but don't steal the code and name it yours
 
-    print (random.sample(vars, 1))
+# Edited by gtdt
+
+def helpMenu():
+    print('''\033[2J\033[1;1H
+                    Help menu
+
+    1. If you want to receive the ansvers press
+    [enter] without any text in your choice input.
+
+    2. If you want to exit application type [exit]
+    or just press [ctrl + c]
+    ''')
+
+def exitAndMessage():
+    print("\ngoodbye")
+    time.sleep(1.5)
+    exit()
+
+def main():
+
+    helpMenu()
+
+    try:
+
+        while True:
+
+            vars = []
+
+            chooseTimes = 1
+            stillChoosing = True
+            while stillChoosing:
+
+                choice = input(f"choice {chooseTimes}: ")
+                if choice == "exit":
+                    exitAndMessage()
+
+                if choice == "":
+                    stillChoosing = False
+                else:
+                    vars.append(choice)
+
+                chooseTimes += 1
+
+            helpMenu()
+            print (f'Answer: {vars[random.randint(1, len(vars)-1)]}\n')
+
+    except:
+        try:
+            exitAndMessage()
+        except:
+            exit()
+
+if __name__ == '__main__': main()

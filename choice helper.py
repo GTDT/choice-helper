@@ -7,9 +7,7 @@ def main():
     choices = []
     while True:
         choice = input("choice 1: ")
-        if choice == "":
-            break
-        
+        if choice == "": break
         choices.append(choice)
 
     print( f" Choices: {choices} \n result: {choices[randint(0, len(choices)-1)]}" )

@@ -1,18 +1,18 @@
-import random
-import time
-#made by JaCrispy4939
-#feel free to make edits but dont steal the code and name it yours
-while True:
-    choice1 = input("choice 1: ")
-    if choice1 == "exit":
-        print("\ngoodbye")
-        time.sleep(1.5)
-        quit()
-    choice2 = input("Choice 2: ")
-    if choice2 == "exit":
-        print("\ngoodbye")
-        time.sleep(1.5)
-        quit()
-    vars = [choice1,choice2]
+from random import randint
+from time import sleep
 
-    print (random.sample(vars, 1))
+#made by JaCrispy4939 and edited by gtdt
+#feel free to make edits but dont steal the code and name it yours
+def main():
+    choices = []
+    while True:
+        choice = input("choice 1: ")
+        if choice == "":
+            break
+        
+        choices.append(choice)
+
+    print( f" Choices: {choices} \n result: {choices[randint(0, len(choices)-1)]}" )
+	
+if __name__ == "__main__":
+    main()

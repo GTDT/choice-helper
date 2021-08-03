@@ -6,11 +6,11 @@ from time import sleep
 def main():
     choices = []
     while True:
-        choice = input("choice 1: ")
+        choice = input("add choice: ")
         if choice == "": break
         choices.append(choice)
 
-    print( f" Choices: {choices} \n result: {choices[randint(0, len(choices)-1)]}" )
+    print( f" Choices: {choices} \n Result: {choices[randint(0, len(choices)-1)]}" )
 	
 if __name__ == "__main__":
     main()

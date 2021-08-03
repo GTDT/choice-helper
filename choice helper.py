@@ -11,6 +11,7 @@ def main():
         choices.append(choice)
 
     print( f" Choices: {choices} \n Result: {choices[randint(0, len(choices)-1)]}" )
-	
+
 if __name__ == "__main__":
     main()
+    sleep(3)
